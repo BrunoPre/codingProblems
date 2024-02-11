@@ -4,9 +4,8 @@ import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
-        Solution solution = new Solution<>();
 
-        BinaryTree<Integer> treeA = new BinaryTree<Integer>(20,
+        BinaryTree<Integer> treeA = new BinaryTree<>(20,
             Optional.of(new BinaryTree<>(8,
                 Optional.of(new BinaryTree<>(4)),
                 Optional.of(new BinaryTree<>(12,
@@ -21,7 +20,7 @@ public class Main {
         );
 
         System.out.print("Solution A: ");
-        System.out.println(solution.mainBoundaryTraversal(Optional.of(treeA)));
+        System.out.println(Solution.mainBoundaryTraversal(Optional.of(treeA)));
 
         BinaryTree<Integer> treeB = new BinaryTree<Integer>(1,
             Optional.of(new BinaryTree<>(2,
@@ -38,9 +37,9 @@ public class Main {
         );
 
         System.out.print("Solution B: ");
-        System.out.println(solution.mainBoundaryTraversal(Optional.of(treeB)));
+        System.out.println(Solution.mainBoundaryTraversal(Optional.of(treeB)));
 
-        BinaryTree<Integer> treeC = new BinaryTree<Integer>(1,
+        BinaryTree<Integer> treeC = new BinaryTree<>(1,
             Optional.of(new BinaryTree<>(2,
                 Optional.of(new BinaryTree<>(4,
                     Optional.of(new BinaryTree<>(6)),
@@ -57,7 +56,7 @@ public class Main {
             Optional.empty()
         );
         System.out.print("Solution C: ");
-        System.out.println(solution.mainBoundaryTraversal(Optional.of(treeC)));
+        System.out.println(Solution.mainBoundaryTraversal(Optional.of(treeC)));
     }
 
 }

@@ -3,16 +3,11 @@ package fr.bruno.codingProblems.boundaryTraversalBinaryTree;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class Solution<T> {
+public class Solution {
+    public static <T> ArrayList<T> mainBoundaryTraversal(Optional<BinaryTree<T>> tree) {
+        if (tree.isEmpty()) return new ArrayList<>();
 
-    Solution() {}
-
-    public ArrayList<T> mainBoundaryTraversal(Optional<BinaryTree<T>> tree) {
-        if (tree.isEmpty()) {
-            return new ArrayList<>();
-        }
-
-        ArrayList<T> traversal = new ArrayList<T>();
+        ArrayList<T> traversal = new ArrayList<>();
 
         traversal.add(tree.get().val);
         leftBoundaryTraversal(tree.get().leftSubTree, traversal);
@@ -24,10 +19,8 @@ public class Solution<T> {
         return traversal;
     }
 
-    public void leftBoundaryTraversal(Optional<BinaryTree<T>> optionalTree, ArrayList<T> traversal) {
-        if (optionalTree.isEmpty()) {
-            return;
-        }
+    public static <T> void leftBoundaryTraversal(Optional<BinaryTree<T>> optionalTree, ArrayList<T> traversal) {
+        if (optionalTree.isEmpty()) return;
 
         BinaryTree<T> tree = optionalTree.get();
 
@@ -47,10 +40,8 @@ public class Solution<T> {
         }
     }
 
-    public void rightBoundaryTraversal(Optional<BinaryTree<T>> optionalTree, ArrayList<T> traversal) {
-        if (optionalTree.isEmpty()) {
-            return;
-        }
+    public static <T> void rightBoundaryTraversal(Optional<BinaryTree<T>> optionalTree, ArrayList<T> traversal) {
+        if (optionalTree.isEmpty()) return;
 
         BinaryTree<T> tree = optionalTree.get();
 

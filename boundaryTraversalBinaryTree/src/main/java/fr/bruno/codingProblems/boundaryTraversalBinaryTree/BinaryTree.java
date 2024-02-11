@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public class BinaryTree<T> {
     T val;
-    Optional<BinaryTree<T>> leftSubTree, rightSubTree;
+    Optional<BinaryTree<T>> leftSubTree, rightSubTree; // maybe it seems over-the-top but I am pretty fond of optional types
 
     BinaryTree() {}
     BinaryTree(T val){
